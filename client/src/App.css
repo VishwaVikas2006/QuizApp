@@ -1,0 +1,161 @@
+:root {
+  --primary-color: #646cff;
+  --bg-gradient: linear-gradient(135deg, #1e1e2f 0%, #2a2a40 100%);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text-color: #ffffff;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text-color);
+  background: var(--bg-gradient);
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Custom Styles */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  margin: 15px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 200px;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-color);
+}
+
+.input-field {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 1rem;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.question-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.result-table th,
+.result-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-table th {
+  background-color: rgba(100, 108, 255, 0.2);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.result-table tr:last-child td {
+  border-bottom: none;
+}
+
+.result-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin: 15px 0;
+}
+
+.homepage h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #fff, #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
