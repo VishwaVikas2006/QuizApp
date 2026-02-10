@@ -53,6 +53,15 @@ A full-stack Quiz Web Application built with React, Node.js, Express, and MongoD
    ```
    Client runs on `http://localhost:5173`.
 
+## Deployment (Vercel)
+
+This repo is configured for a **Vercel-only** deployment.
+
+1. Push to GitHub.
+2. Import into Vercel.
+3. Set `MONGO_URI` in Vercel Environment Variables.
+4. Deploy!
+
 ## Usage
 1. Open `http://localhost:5173` in your browser.
 2. Enter a username and select a topic to start the quiz.
