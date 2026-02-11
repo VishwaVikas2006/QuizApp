@@ -12,17 +12,29 @@ app.use(express.json());
 app.use(cors());
 
 // Database Connection
+let isConnected = false; // Track connection status
+
 const connectDB = async () => {
+    if (isConnected) {
+        console.log('Using existing MongoDB connection');
+        return;
+    }
+
     try {
-        await mongoose.connect(process.env.MONGO_URI);
+        const db = await mongoose.connect(process.env.MONGO_URI);
+        isConnected = db.connections[0].readyState;
         console.log('MongoDB Connected');
     } catch (err) {
         console.error('MongoDB Connection Error:', err.message);
-        // process.exit(1); // Keep running even if DB fails for now (local test)
+        // Do not exit process in serverless; just log error
     }
 };
 
-connectDB();
+// Connect to DB for every request (cached if already connected)
+app.use(async (req, res, next) => {
+    await connectDB();
+    next();
+});
 
 // Routes
 const apiRoutes = require('./routes/api');

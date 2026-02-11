@@ -6,6 +6,13 @@ const Result = require('../models/Result');
 const ADMIN_EMAIL = 'admin@example.com';
 const ADMIN_PASSWORD = 'admin';
 
+// @route   GET /api/health
+// @desc    Check server health
+// @access  Public
+router.get('/health', (req, res) => {
+    res.json({ status: 'ok', message: 'Server is running' });
+});
+
 // @route   POST /api/admin/login
 // @desc    Admin Login
 // @access  Public
