@@ -2,8 +2,8 @@
     "name": "quiz-app",
     "version": "1.0.0",
     "scripts": {
-        "start": "node server/server.js"
-       
+        "start": "node server/server.js",
+        "build": "cd client && npm install && npm run build"
     },
     "dependencies": {
         "cors": "^2.8.6",
