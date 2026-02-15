@@ -42,7 +42,22 @@ function Homepage() {
                 setUsername(res.data.user.username);
             }
         } catch (err) {
-            setError(err.response?.data?.message || 'Authentication failed');
+            console.error("Auth Error:", err);
+            let msg = 'Authentication failed';
+            if (err.response) {
+                // Server responded with a status code outside 2xx
+                if (err.response.data && err.response.data.message) {
+                    msg = err.response.data.message;
+                } else {
+                    msg = `Server Error (${err.response.status})`;
+                }
+            } else if (err.request) {
+                // Request was made but no response received
+                msg = 'Network Error: No response from server. Check your connection.';
+            } else {
+                msg = err.message;
+            }
+            setError(msg);
         }
     };
 
