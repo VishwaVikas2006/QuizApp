@@ -24,7 +24,7 @@ router.get('/health', (req, res) => {
 router.post('/admin/login', (req, res) => {
     const { email, password } = req.body;
 
-    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+    if (email.trim() === ADMIN_EMAIL && password.trim() === ADMIN_PASSWORD) {
         return res.json({ success: true, message: 'Login successful' });
     } else {
         return res.status(401).json({ success: false, message: 'Invalid credentials' });

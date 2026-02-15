@@ -22,7 +22,9 @@ function AdminLogin() {
                 navigate('/admin/dashboard');
             }
         } catch (err) {
-            alert('Invalid Credentials');
+            console.error(err);
+            const message = err.response?.data?.message || 'Login failed. Please check your credentials or try again.';
+            alert(message);
         }
     };
 
